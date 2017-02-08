@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	table, th ,td {
+		border: 1px solid black;
+		
+	}
+	body{
+		background: #808080;
+	}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<center>
+<table>
+	
+		<td><b><h3><center>Subject</b></td>
+		<td><b><h3><center>Grade</td>
+		<td><b><h3><center>Credit</td>
+		<td><b><h3><center>Points</td>
+
+		<tr>
+			<td><h3><center>Subject1</td>
+			<td><h3><center><select ng-model="selectedGrade1" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit1" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade1.point * selectedCredit1.point}}</td>
+
+			
+		</tr>
+		<tr>
+			<td><h3><center>Subject2</td>
+			<td><h3><center><select ng-model="selectedGrade2" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit2" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade2.point * selectedCredit2.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject3</td>
+			<td><h3><center><select ng-model="selectedGrade3" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit3" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade3.point * selectedCredit3.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject4</td>
+			<td><h3><center><select ng-model="selectedGrade4" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit4" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade4.point * selectedCredit4.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject5</td>
+			<td><h3><center><select ng-model="selectedGrade5" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit5" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade5.point * selectedCredit5.point}}</td>
+
+			
+		</tr>
+		<tr>
+			<td><h3><center>Subject6</td>
+			<td><h3><center><select ng-model="selectedGrade6" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit6" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade6.point * selectedCredit6.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject7</td>
+			<td><h3><center><select ng-model="selectedGrade7" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit7" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade7.point * selectedCredit7.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject8</td>
+			<td><h3><center><select ng-model="selectedGrade8" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit8" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade8.point * selectedCredit8.point}}</td>
+		</tr>
+		<tr>
+			<td><h3><center>Subject9</td>
+			<td><h3><center><select ng-model="selectedGrade9" ng-options="x.grade for x in grade"></select></td>
+			<td><h3><center><select ng-model="selectedCredit9" ng-options="x.credit for x in credit"></select></td>
+			<td><h3><center>{{selectedGrade9.point * selectedCredit9.point}}</td>
+		</tr>
+		
+
+	
+</table>
+</center>
+<br><br>
+<center><input type="text" id="value2" value="{{ selectedGrade1.point * selectedCredit1.point + selectedGrade2.point * selectedCredit2.point + selectedGrade3.point * selectedCredit3.point + selectedGrade4.point * selectedCredit4.point + selectedGrade5.point * selectedCredit5.point + selectedGrade6.point * selectedCredit6.point + selectedGrade7.point * selectedCredit7.point + selectedGrade8.point * selectedCredit8.point + selectedGrade9.point * selectedCredit9.point}}"/></center>
+<br><br><center><input type="text" id="value1" value="{{selectedCredit1.point + selectedCredit2.point + selectedCredit3.point + selectedCredit4.point + selectedCredit5.point + selectedCredit6.point + selectedCredit7.point + selectedCredit8.point + selectedCredit9.point}}" /></center> 
+<br><br>
+<center><input type="button" name="Sumbit" value="Click here" onclick="javascript:addNumbers()"/>
+<script language="javascript">
+                function addNumbers()
+                {
+                        var y = document.getElementById("value1").value;
+                        var z = document.getElementById("value2").value;
+        				var x = z / y;
+        				document.getElementById("value3").innerHTML = x;
+                }
+        </script>
+
+<center><p id="value3"></p></center>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.grade = [
+        {grade : "S", point : 10},
+        {grade : "A", point : 9},
+        {grade : "B", point : 8},
+        {grade : "C", point : 7},
+        {grade : "D", point : 6},
+        {grade : "E", point : 5},
+        {grade : "U", point : 0}
+    ];
+    $scope.credit = [
+    	{credit : "6", point : 6},
+        {credit : "5", point : 5},
+        {credit : "4", point : 4},
+        {credit : "3", point : 3},
+        {credit : "2", point : 2},
+        {credit : "1", point : 1}
+    ];
+});
+
+
+</script>
+
+
+
+</body>
+</html>
